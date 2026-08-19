@@ -1,6 +1,8 @@
 import easyocr
+from preprocessing import preprocess_image
 
 _reader = None
+
 
 def get_reader():
     """Load the EasyOCR model once and reuse it (avoids reloading on every call)."""
@@ -9,14 +11,20 @@ def get_reader():
         _reader = easyocr.Reader(['en'])
     return _reader
 
-def extract_text(image_path: str) -> list[dict]:
+
+def extract_text(image_path: str, preprocess: bool = True) -> list[dict]:
     """
     Run OCR on an image and return results in reading order.
+
+    If preprocess=True (default), applies grayscale + upscale + contrast
+    enhancement before running OCR, which improves accuracy on small,
+    low-contrast, or compressed images.
 
     Returns a list of dicts: {"text": str, "confidence": float}
     """
     reader = get_reader()
-    results = reader.readtext(image_path)
+    image_input = preprocess_image(image_path) if preprocess else image_path
+    results = reader.readtext(image_input)
 
     def sort_key(detection):
         bbox, text, confidence = detection

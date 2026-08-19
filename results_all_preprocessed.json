@@ -1,0 +1,212 @@
+{
+  "samples\\test1.jpg": [
+    {
+      "text": "and",
+      "confidence": 1.0
+    },
+    {
+      "text": "Tomorrow",
+      "confidence": 1.0
+    },
+    {
+      "text": "and",
+      "confidence": 1.0
+    },
+    {
+      "text": "tomorrow",
+      "confidence": 0.99
+    },
+    {
+      "text": "tomorrow; creeps",
+      "confidence": 0.98
+    },
+    {
+      "text": "in this petty pace",
+      "confidence": 0.94
+    },
+    {
+      "text": "day",
+      "confidence": 1.0
+    },
+    {
+      "text": "from",
+      "confidence": 1.0
+    },
+    {
+      "text": "to",
+      "confidence": 1.0
+    },
+    {
+      "text": "until the last",
+      "confidence": 0.75
+    },
+    {
+      "text": "syl]",
+      "confidence": 0.9
+    },
+    {
+      "text": "able of recorded",
+      "confidence": 0.99
+    },
+    {
+      "text": "time. And all ur",
+      "confidence": 0.77
+    },
+    {
+      "text": "yesterdays have",
+      "confidence": 1.0
+    },
+    {
+      "text": "lighted fools the",
+      "confidence": 0.96
+    },
+    {
+      "text": "dusty",
+      "confidence": 1.0
+    },
+    {
+      "text": "way to",
+      "confidence": 1.0
+    }
+  ],
+  "samples\\test2.jpg": [
+    {
+      "text": "1200 Oid Stickney Point R",
+      "confidence": 0.55
+    },
+    {
+      "text": "07/31/2022",
+      "confidence": 0.98
+    },
+    {
+      "text": "Sydney",
+      "confidence": 1.0
+    },
+    {
+      "text": "Table 142/1",
+      "confidence": 0.95
+    },
+    {
+      "text": "Guests;",
+      "confidence": 0.87
+    },
+    {
+      "text": "50033",
+      "confidence": 1.0
+    },
+    {
+      "text": "Pink Lemonade",
+      "confidence": 0.65
+    },
+    {
+      "text": "3,50",
+      "confidence": 0.97
+    },
+    {
+      "text": "Diet Coke",
+      "confidence": 0.9
+    },
+    {
+      "text": "3.50",
+      "confidence": 0.65
+    },
+    {
+      "text": "1602 Drink",
+      "confidence": 0.62
+    },
+    {
+      "text": "8.99",
+      "confidence": 0.7
+    },
+    {
+      "text": "Siesta Key Lemonade (2 @6,50)",
+      "confidence": 0.59
+    },
+    {
+      "text": "13.00",
+      "confidence": 0.76
+    },
+    {
+      "text": "Cajun Combo",
+      "confidence": 0.95
+    },
+    {
+      "text": "22,00",
+      "confidence": 0.51
+    },
+    {
+      "text": "Kids Shrimp (2 08.00)",
+      "confidence": 0.6
+    },
+    {
+      "text": "16.00",
+      "confidence": 0.82
+    },
+    {
+      "text": "23.00",
+      "confidence": 0.55
+    },
+    {
+      "text": "Grouper Basket",
+      "confidence": 0.93
+    },
+    {
+      "text": "Landshark Draught",
+      "confidence": 1.0
+    },
+    {
+      "text": "5,25",
+      "confidence": 0.93
+    },
+    {
+      "text": "Subtota]",
+      "confidence": 0.96
+    },
+    {
+      "text": "95.24",
+      "confidence": 0.51
+    },
+    {
+      "text": "Tax",
+      "confidence": 1.0
+    },
+    {
+      "text": "4.76",
+      "confidence": 1.0
+    },
+    {
+      "text": "Totat",
+      "confidence": 0.52
+    },
+    {
+      "text": "100",
+      "confidence": 0.99
+    },
+    {
+      "text": "00",
+      "confidence": 0.99
+    }
+  ],
+  "samples\\test3.jpg": [
+    {
+      "text": "Templates",
+      "confidence": 0.99
+    },
+    {
+      "text": "Customization",
+      "confidence": 0.89
+    },
+    {
+      "text": "Domains",
+      "confidence": 0.78
+    },
+    {
+      "text": "SEO",
+      "confidence": 0.99
+    },
+    {
+      "text": "Analytics",
+      "confidence": 1.0
+    }
+  ]
+}

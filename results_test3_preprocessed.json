@@ -1,0 +1,24 @@
+{
+  "samples/test3.jpg": [
+    {
+      "text": "Templates",
+      "confidence": 0.99
+    },
+    {
+      "text": "Customization",
+      "confidence": 0.89
+    },
+    {
+      "text": "Domains",
+      "confidence": 0.78
+    },
+    {
+      "text": "SEO",
+      "confidence": 0.99
+    },
+    {
+      "text": "Analytics",
+      "confidence": 1.0
+    }
+  ]
+}

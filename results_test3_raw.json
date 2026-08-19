@@ -1,0 +1,24 @@
+{
+  "samples/test3.jpg": [
+    {
+      "text": "Temnlates",
+      "confidence": 0.72
+    },
+    {
+      "text": "Custom /ation",
+      "confidence": 0.51
+    },
+    {
+      "text": "Sccjl",
+      "confidence": 0.53
+    },
+    {
+      "text": "SEO",
+      "confidence": 0.99
+    },
+    {
+      "text": "Analytics",
+      "confidence": 1.0
+    }
+  ]
+}

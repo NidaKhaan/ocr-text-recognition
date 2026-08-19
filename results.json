@@ -1,0 +1,192 @@
+{
+  "samples\\test1.jpg": [
+    {
+      "text": "Tomorrow, and",
+      "confidence": 0.81
+    },
+    {
+      "text": "tomorrow, and",
+      "confidence": 0.85
+    },
+    {
+      "text": "tomorrow; creeps",
+      "confidence": 0.93
+    },
+    {
+      "text": "in this petty pace",
+      "confidence": 0.95
+    },
+    {
+      "text": "from day to",
+      "confidence": 0.98
+    },
+    {
+      "text": "day_",
+      "confidence": 0.96
+    },
+    {
+      "text": "syil-",
+      "confidence": 0.79
+    },
+    {
+      "text": "able of recorded",
+      "confidence": 0.96
+    },
+    {
+      "text": "time_",
+      "confidence": 0.99
+    },
+    {
+      "text": "And all our",
+      "confidence": 0.97
+    },
+    {
+      "text": "yesterdays have",
+      "confidence": 0.99
+    },
+    {
+      "text": "jighted fools the",
+      "confidence": 0.77
+    },
+    {
+      "text": "way to dusty",
+      "confidence": 1.0
+    }
+  ],
+  "samples\\test2.jpg": [
+    {
+      "text": "Server : Sydney",
+      "confidence": 0.88
+    },
+    {
+      "text": "07/31/2022",
+      "confidence": 0.98
+    },
+    {
+      "text": "Table",
+      "confidence": 1.0
+    },
+    {
+      "text": "42/1",
+      "confidence": 1.0
+    },
+    {
+      "text": "Guests;",
+      "confidence": 0.94
+    },
+    {
+      "text": "50033",
+      "confidence": 1.0
+    },
+    {
+      "text": "3,50",
+      "confidence": 0.63
+    },
+    {
+      "text": "Diet Coke",
+      "confidence": 0.72
+    },
+    {
+      "text": "Pink Leronace",
+      "confidence": 0.83
+    },
+    {
+      "text": "3.50",
+      "confidence": 0.56
+    },
+    {
+      "text": "8,99",
+      "confidence": 0.59
+    },
+    {
+      "text": "Siesta Key",
+      "confidence": 0.99
+    },
+    {
+      "text": "emonade (2 06,50)",
+      "confidence": 0.89
+    },
+    {
+      "text": "13,00",
+      "confidence": 0.83
+    },
+    {
+      "text": "Cajun Combo",
+      "confidence": 1.0
+    },
+    {
+      "text": "22,00",
+      "confidence": 0.83
+    },
+    {
+      "text": "Kids Shrimp",
+      "confidence": 0.94
+    },
+    {
+      "text": "16.00",
+      "confidence": 0.92
+    },
+    {
+      "text": "Grouper Basket",
+      "confidence": 0.97
+    },
+    {
+      "text": "23,00",
+      "confidence": 0.54
+    },
+    {
+      "text": "Lanoshark Draught",
+      "confidence": 0.94
+    },
+    {
+      "text": "5,25",
+      "confidence": 0.99
+    },
+    {
+      "text": "Subtota]",
+      "confidence": 0.94
+    },
+    {
+      "text": "95.24",
+      "confidence": 0.71
+    },
+    {
+      "text": "Tax",
+      "confidence": 1.0
+    },
+    {
+      "text": "Total",
+      "confidence": 0.6
+    },
+    {
+      "text": "100",
+      "confidence": 0.99
+    },
+    {
+      "text": "00",
+      "confidence": 0.99
+    }
+  ],
+  "samples\\test3.jpg": [
+    {
+      "text": "Temnlates",
+      "confidence": 0.72
+    },
+    {
+      "text": "Custom /ation",
+      "confidence": 0.51
+    },
+    {
+      "text": "Sccjl",
+      "confidence": 0.53
+    },
+    {
+      "text": "SEO",
+      "confidence": 0.99
+    },
+    {
+      "text": "Analytics",
+      "confidence": 1.0
+    }
+  ]
+}
