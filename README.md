@@ -5,7 +5,7 @@ A confidence-scored OCR utility for extracting text from images — built as a r
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 [![Streamlit](https://img.shields.io/badge/streamlit-deployed-FF4B4B?logo=streamlit&logoColor=white)](https://ocr-text-recognition-fzmkfhjbgfikwfbbqhde5m.streamlit.app/)
 ![EasyOCR](https://img.shields.io/badge/OCR-EasyOCR-6366F1)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![License(https://img.shields.io/badge/license-MIT-lightgrey)](LICENSE)
 
 **[Live demo](https://ocr-text-recognition-fzmkfhjbgfikwfbbqhde5m.streamlit.app/)**
 
