@@ -2,39 +2,26 @@ import easyocr
 from preprocessing import preprocess_image
 
 _reader = None
-_reader_langs = None
 
 
-def get_reader(langs: list[str] = None):
-    """
-    Load the EasyOCR model for the given language list, reusing it if the
-    language selection hasn't changed since the last call.
-    """
-    global _reader, _reader_langs
-    if langs is None:
-        langs = ['en']
-
-    if _reader is None or _reader_langs != langs:
-        _reader = easyocr.Reader(langs)
-        _reader_langs = langs
-
+def get_reader():
+    """Load the EasyOCR English model once and reuse it across calls."""
+    global _reader
+    if _reader is None:
+        _reader = easyocr.Reader(['en'])
     return _reader
 
 
-def extract_text(image_path: str, preprocess: bool = True, langs: list[str] = None) -> list[dict]:
+def extract_text(image_path: str, preprocess: bool = True) -> list[dict]:
     """
     Run OCR on an image and return results in reading order.
 
-    langs: list of EasyOCR language codes, e.g. ['en'], ['en', 'ur'].
-           Defaults to English only if not specified.
-
-    If preprocess=True (default), applies grayscale + upscale + contrast
-    enhancement before running OCR, which improves accuracy on small,
-    low-contrast, or compressed images.
+    If preprocess=True (default), applies grayscale, upscale, deskew,
+    conditional denoise/sharpen, and contrast enhancement before OCR.
 
     Returns a list of dicts: {"text": str, "confidence": float}
     """
-    reader = get_reader(langs)
+    reader = get_reader()
     image_input = preprocess_image(image_path) if preprocess else image_path
     results = reader.readtext(image_input)
 
