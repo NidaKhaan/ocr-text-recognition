@@ -150,23 +150,24 @@ def confidence_color(confidence: float) -> str:
 
 
 def render_results_card(results: list[dict]):
-    html = '<div class="result-card">'
-
+    rows = []
     if not results:
-        html += '<div class="empty-state">No text detected above this confidence threshold.</div>'
+        rows.append('<div class="empty-state">No text detected above this confidence threshold.</div>')
     else:
         for r in results:
             color = confidence_color(r["confidence"])
             pct = int(r["confidence"] * 100)
             text = r["text"].replace("<", "&lt;").replace(">", "&gt;")
-            html += f"""
-            <div class="line-row">
-                <div class="line-text">{text}</div>
-                <div class="conf-bar-track"><div class="conf-bar-fill" style="width:{pct}%; background-color:{color};"></div></div>
-                <div class="conf-label">{r['confidence']:.2f}</div>
-            </div>
-            """
-    html += "</div>"
+            row = (
+                '<div class="line-row">'
+                f'<div class="line-text">{text}</div>'
+                f'<div class="conf-bar-track"><div class="conf-bar-fill" style="width:{pct}%; background-color:{color};"></div></div>'
+                f'<div class="conf-label">{r["confidence"]:.2f}</div>'
+                '</div>'
+            )
+            rows.append(row)
+
+    html = '<div class="result-card">' + "".join(rows) + "</div>"
     st.markdown(html, unsafe_allow_html=True)
 
 
