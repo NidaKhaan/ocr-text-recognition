@@ -3,9 +3,11 @@
 A confidence-scored OCR utility for extracting text from images — built as a real tool, not a demo. Supports single images and batch folders, exports to JSON/TXT, and ships with a web UI for interactive use.
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![Streamlit](https://img.shields.io/badge/streamlit-deployed-FF4B4B?logo=streamlit&logoColor=white)
+[![Streamlit](https://img.shields.io/badge/streamlit-deployed-FF4B4B?logo=streamlit&logoColor=white)](https://ocr-text-recognition-fzmkfhjbgfikwfbbqhde5m.streamlit.app/)
 ![EasyOCR](https://img.shields.io/badge/OCR-EasyOCR-6366F1)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
+**[Live demo](https://ocr-text-recognition-fzmkfhjbgfikwfbbqhde5m.streamlit.app/)**
 
 
 ---

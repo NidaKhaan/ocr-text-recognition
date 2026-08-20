@@ -6,7 +6,7 @@ import json
 
 from ocr_engine import extract_text
 
-st.set_page_config(page_title="OCR Text Extractor", layout="centered")
+st.set_page_config(page_title="OCR Text Extractor", page_icon="🔍", layout="centered")
 
 CUSTOM_CSS = """
 <style>
@@ -53,6 +53,7 @@ h1, h2, h3 {
     border-radius: 10px;
     padding: 1rem 1.2rem;
     margin-bottom: 0.8rem;
+    height: 100%;
 }
 
 .result-header {
@@ -77,13 +78,14 @@ h1, h2, h3 {
 
 .line-text {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     color: #E8E9ED;
     flex: 1;
+    word-break: break-word;
 }
 
 .conf-bar-track {
-    width: 70px;
+    width: 50px;
     height: 6px;
     background-color: #2A2E38;
     border-radius: 3px;
@@ -100,7 +102,7 @@ h1, h2, h3 {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.78rem;
     color: #8B90A0;
-    width: 38px;
+    width: 34px;
     flex-shrink: 0;
     text-align: right;
 }
@@ -109,6 +111,14 @@ h1, h2, h3 {
     color: #8B90A0;
     font-size: 0.9rem;
     padding: 0.5rem 0;
+}
+
+.file-label {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600;
+    color: #E8E9ED;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
 }
 </style>
 """
@@ -139,38 +149,35 @@ def confidence_color(confidence: float) -> str:
     return "#EF4444"      # red
 
 
-def render_results_card(filename: str, results: list[dict]):
-    st.markdown(f'<div class="result-card"><div class="result-header">{filename}</div>', unsafe_allow_html=True)
+def render_results_card(results: list[dict]):
+    html = '<div class="result-card">'
 
     if not results:
-        st.markdown('<div class="empty-state">No text detected above this confidence threshold.</div></div>', unsafe_allow_html=True)
-        return
-
-    rows_html = ""
-    for r in results:
-        color = confidence_color(r["confidence"])
-        pct = int(r["confidence"] * 100)
-        text = r["text"].replace("<", "&lt;").replace(">", "&gt;")
-        rows_html += f"""
-        <div class="line-row">
-            <div class="line-text">{text}</div>
-            <div class="conf-bar-track"><div class="conf-bar-fill" style="width:{pct}%; background-color:{color};"></div></div>
-            <div class="conf-label">{r['confidence']:.2f}</div>
-        </div>
-        """
-    st.markdown(rows_html + "</div>", unsafe_allow_html=True)
+        html += '<div class="empty-state">No text detected above this confidence threshold.</div>'
+    else:
+        for r in results:
+            color = confidence_color(r["confidence"])
+            pct = int(r["confidence"] * 100)
+            text = r["text"].replace("<", "&lt;").replace(">", "&gt;")
+            html += f"""
+            <div class="line-row">
+                <div class="line-text">{text}</div>
+                <div class="conf-bar-track"><div class="conf-bar-fill" style="width:{pct}%; background-color:{color};"></div></div>
+                <div class="conf-label">{r['confidence']:.2f}</div>
+            </div>
+            """
+    html += "</div>"
+    st.markdown(html, unsafe_allow_html=True)
 
 
 if uploaded_files:
     all_results = {}
 
     for uploaded_file in uploaded_files:
-        image = Image.open(uploaded_file)
-        st.image(image, use_container_width=True)
+        st.markdown(f'<div class="file-label">{uploaded_file.name}</div>', unsafe_allow_html=True)
 
-        # Normalize to RGB before saving: uploaded PNGs can be RGBA/palette mode,
-        # which crashes when saved as JPEG. Always converting avoids format/mode
-        # mismatches regardless of the original upload's format.
+        image = Image.open(uploaded_file)
+
         if image.mode != "RGB":
             image = image.convert("RGB")
 
@@ -186,7 +193,13 @@ if uploaded_files:
         filtered = [r for r in results if r["confidence"] >= min_confidence]
         all_results[uploaded_file.name] = filtered
 
-        render_results_card(uploaded_file.name, filtered)
+        img_col, results_col = st.columns([1, 1])
+        with img_col:
+            st.image(image, use_container_width=True)
+        with results_col:
+            render_results_card(filtered)
+
+        st.markdown("<br>", unsafe_allow_html=True)
 
     st.divider()
     st.subheader("Export results")
