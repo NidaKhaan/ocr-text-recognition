@@ -168,8 +168,14 @@ if uploaded_files:
         image = Image.open(uploaded_file)
         st.image(image, use_container_width=True)
 
-        with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(uploaded_file.name)[1]) as tmp:
-            image.save(tmp.name)
+        # Normalize to RGB before saving: uploaded PNGs can be RGBA/palette mode,
+        # which crashes when saved as JPEG. Always converting avoids format/mode
+        # mismatches regardless of the original upload's format.
+        if image.mode != "RGB":
+            image = image.convert("RGB")
+
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
+            image.save(tmp.name, format="JPEG")
             tmp_path = tmp.name
 
         with st.spinner("Running OCR..."):
